@@ -1,0 +1,128 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 32px 16px;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #e8f3f3;
+  color: #1f2933;
+}
+
+.card {
+  width: 100%;
+  max-width: 640px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin: 0 0 20px;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+label { font-weight: 600; }
+.label-kecil { margin: 0 4px 0 12px; }
+
+input, select {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1.5px solid #222;
+  border-radius: 4px;
+  font-size: 1rem;
+  background: #fff;
+}
+
+input:focus, select:focus {
+  outline: 2px solid #3aa6a6;
+  outline-offset: 1px;
+}
+
+input[readonly] { background: #f2f4f5; }
+select:disabled { background: #f2f4f5; cursor: not-allowed; }
+
+.tanggal, .inline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tanggal input { width: 70px; text-align: center; }
+.tanggal input.tahun { width: 90px; }
+.inline .kecil { width: 120px; }
+
+.bunga-info {
+  margin: 0 0 14px 152px;
+  padding: 8px 14px;
+  border-left: 4px solid #3aa6a6;
+  background: #f0fafa;
+  font-size: 0.9rem;
+}
+
+.bunga-info ul { margin: 4px 0 0; padding-left: 18px; }
+
+fieldset {
+  border: 1.5px solid #222;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 8px 0 16px;
+}
+
+fieldset:disabled { opacity: 0.5; }
+legend { font-weight: 700; padding: 0 8px; }
+
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.grid3 label { display: block; margin-bottom: 4px; }
+
+.aksi { display: flex; gap: 10px; justify-content: flex-end; }
+
+button {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 6px;
+  background: #1f7a7a;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover { background: #17605f; }
+button.sekunder { background: #6b7780; }
+button.sekunder:hover { background: #55606a; }
+
+#hasil {
+  margin-top: 20px;
+  padding: 14px;
+  background: #1f2933;
+  color: #e6fffa;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 520px) {
+  .row { grid-template-columns: 1fr; gap: 4px; }
+  .bunga-info { margin-left: 0; }
+  .grid3 { grid-template-columns: 1fr; }
+}

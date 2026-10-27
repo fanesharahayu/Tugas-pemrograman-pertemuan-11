@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Belanja</title>
+  <link rel="stylesheet" href="FormBelanja.CSS">
+</head>
+<body>
+  <main class="card">
+    <h1>Form Belanja</h1>
+
+    <form id="formBelanja" novalidate>
+      <div class="row">
+        <label for="customer">Customer</label>
+        <input type="text" id="customer" placeholder="Nama customer" required>
+      </div>
+
+      <div class="row">
+        <label>Tgl Trsk</label>
+        <div class="tanggal">
+          <input type="number" id="dd" placeholder="DD" min="1" max="31">
+          <span>-</span>
+          <input type="number" id="mm" placeholder="MM" min="1" max="12">
+          <span>-</span>
+          <input type="number" id="yyyy" placeholder="YYYY" min="2000" max="2100" class="tahun">
+        </div>
+      </div>
+
+      <div class="row">
+        <label for="jenis">Jenis</label>
+        <select id="jenis" required>
+          <option value="">-- Pilih jenis --</option>
+          <option value="TV">1. TV</option>
+          <option value="Kulkas">2. Kulkas</option>
+          <option value="Mesin Cuci">3. Mesin Cuci</option>
+          <option value="AC">4. AC</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label for="jlh">Jlh</label>
+        <div class="inline">
+          <input type="number" id="jlh" min="1" value="1" class="kecil">
+          <span>Unit</span>
+        </div>
+      </div>
+
+      <div class="row">
+        <label for="harga">Harga</label>
+        <input type="number" id="harga" min="0" placeholder="Harga satuan (Rp)">
+      </div>
+
+      <div class="row">
+        <label for="metode">Metode Bayar</label>
+        <div class="inline">
+          <select id="metode" class="kecil">
+            <option value="T">T (Tunai)</option>
+            <option value="K">K (Kredit)</option>
+          </select>
+          <label for="bank" class="label-kecil">Bank</label>
+          <select id="bank" disabled>
+            <option value="">-- Bank --</option>
+            <option value="BCA">BCA</option>
+            <option value="BNI">BNI</option>
+            <option value="CIMB">CIMB</option>
+          </select>
+        </div>
+      </div>
+
+      <aside class="bunga-info">
+        <strong>Bunga / thn</strong>
+        <ul>
+          <li>BCA → 5.5%</li>
+          <li>BNI → 7%</li>
+          <li>CIMB → 6.75%</li>
+        </ul>
+      </aside>
+
+      <div class="row" id="rowTunai">
+        <label for="tunai">Tunai</label>
+        <input type="text" id="tunai" readonly placeholder="Total bayar tunai">
+      </div>
+
+      <fieldset id="blokKredit" disabled>
+        <legend>Kredit</legend>
+        <div class="grid3">
+          <div>
+            <label for="tenor">Tenor (bulan)</label>
+            <input type="number" id="tenor" min="1" placeholder="12">
+          </div>
+          <div>
+            <label for="dp">DP</label>
+            <input type="number" id="dp" min="0" placeholder="0">
+          </div>
+          <div>
+            <label for="saldo">Saldo</label>
+            <input type="text" id="saldo" readonly>
+          </div>
+        </div>
+
+        <div class="row">
+          <label for="bunga">Bunga</label>
+          <input type="text" id="bunga" readonly>
+        </div>
+        <div class="row">
+          <label for="pokok">Pokok Cicilan</label>
+          <input type="text" id="pokok" readonly>
+        </div>
+      </fieldset>
+
+      <div class="aksi">
+        <button type="submit">Simpan</button>
+        <button type="reset" class="sekunder">Reset</button>
+      </div>
+    </form>
+
+    <pre id="hasil" hidden></pre>
+  </main>
+
+  <script src="FormBelanja.JS"></script>
+</body>
+</html>
